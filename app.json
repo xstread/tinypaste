@@ -1,0 +1,22 @@
+{
+  "name": "tinypaste",
+  "description": "Simple paste sharing service",
+  "keywords": [
+    "paste",
+    "sharing",
+    "go"
+  ],
+  "website": "https://github.com/xstread/tinypaste",
+  "repository": "https://github.com/xstread/tinypaste",
+  "env": {
+    "PORT": {
+      "description": "Port to run the server on",
+      "value": "8080"
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  }
+}

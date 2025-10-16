@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tinypaste</title>
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAN5QTFRF////fn5+Ghoa6OjoWFhYAAAAzs7OW1tby8vLcHBwFxcXMjIy7e3t+fn5ExMTY2NjxMTE9fX1CwsLFBQU09PTBAQExcXF4uLiUFBQvb293d3dNTU1+/v7ycnJCgoKJCQkbW1tubm5qampRUVFcnJytra2p6enioqKYmJivr6+eXl5srKyq6urc3Nz/v7+MDAw5OTknJyck5OTzc3Nr6+vAgICXl5eU1NTNjY28vLyGRkZREREtLS04+Pj7+/vn5+fjIyM2trat7e3cXFxqKiov7+/9vb2urq6wcHB9PT00eIiSQAAAMBJREFUeJxjZEADjEDEyPgXRYCFkfEXigD7P+YfyAKcjL/Z/rB+4f3Dysj4ASggyPiZgYGP8Q37PwYGAcZXQBXijG9FnjNIvRYDGs74EGSGwlOZ+wxKj//8Z1B+9O8vUEDlocJtBrX7SjcZNO6qXAcKaN1Wu8qgc1Pjsh7jNe0LQAHDK8JSjIwXDRgZzxmfAJlhyXiawYzxJNANUnKHQQIMdiDzD4PIXWCXgoH7Po3LMKeDgcde+TsoAp73H0A8BAAWmTURvumiyAAAAABJRU5ErkJggg==">
+    <style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:ui-sans-serif,system-ui,sans-serif;background:#f9fafb;min-height:100vh}.container{max-width:56rem;margin:0 auto;padding:2rem 1rem}.header{margin-bottom:2rem}.title{font-size:1.5rem;font-family:ui-monospace,monospace;color:#1f2937}.subtitle{font-size:.875rem;color:#6b7280;font-family:ui-monospace,monospace;margin-top:.25rem}.nav{margin-top:1rem}.nav a{font-size:.75rem;color:#6b7280;font-family:ui-monospace,monospace;margin-right:1rem;text-decoration:none}.nav a:hover{color:#374151}.card{background:white;border:1px solid #d1d5db;border-radius:.25rem;padding:1.5rem}.form-group{margin-bottom:1rem}.input,.textarea,.select{width:100%;padding:.5rem 1rem;font-family:ui-monospace,monospace;font-size:.875rem;border:1px solid #d1d5db;border-radius:.25rem}.input:focus,.textarea:focus,.select:focus{outline:none;border-color:transparent;box-shadow:0 0 0 2px #9ca3af}.textarea{resize:vertical;min-height:20rem}.btn{padding:.5rem 1.5rem;background:#1f2937;color:white;font-family:ui-monospace,monospace;font-size:.875rem;border:none;border-radius:.25rem;cursor:pointer}.btn:hover{background:#374151}.space-y-4>*+*{margin-top:1rem}</style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">tinypaste</h1>
+            <p class="subtitle">simple paste sharing</p>
+            <nav class="nav">
+                <a href="/about">about</a>
+                <a href="/legal">legal</a>
+            </nav>
+        </header>
+        
+        <form action="/save" method="post" class="card space-y-4">
+            <div class="form-group">
+                <input 
+                    type="text" 
+                    id="title" 
+                    name="title" 
+                    placeholder="title" 
+                    required
+                    class="input">
+            </div>
+            
+            <div class="form-group">
+                <textarea 
+                    id="body" 
+                    name="body" 
+                    placeholder="content" 
+                    rows="20" 
+                    required
+                    class="textarea"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="ttl" class="subtitle">expires in:</label>
+                <select 
+                    id="ttl" 
+                    name="ttl" 
+                    class="select">
+                    <option value="1h">1 hour</option>
+                    <option value="3h">3 hours</option>
+                    <option value="6h" selected>6 hours</option>
+                    <option value="12h">12 hours</option>
+                    <option value="24h">24 hours</option>
+                    <option value="3d">3 days</option>
+                    <option value="7d">7 days</option>
+                </select>
+            </div>
+            
+            <button 
+                type="submit"
+                class="btn">
+                save
+            </button>
+        </form>
+    </div>
+</body>
+</html>

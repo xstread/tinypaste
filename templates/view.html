@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.Title}} - tinypaste</title>
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAN5QTFRF////fn5+Ghoa6OjoWFhYAAAAzs7OW1tby8vLcHBwFxcXMjIy7e3t+fn5ExMTY2NjxMTE9fX1CwsLFBQU09PTBAQExcXF4uLiUFBQvb293d3dNTU1+/v7ycnJCgoKJCQkbW1tubm5qampRUVFcnJytra2p6enioqKYmJivr6+eXl5srKyq6urc3Nz/v7+MDAw5OTknJyck5OTzc3Nr6+vAgICXl5eU1NTNjY28vLyGRkZREREtLS04+Pj7+/vn5+fjIyM2trat7e3cXFxqKiov7+/9vb2urq6wcHB9PT00eIiSQAAAMBJREFUeJxjZEADjEDEyPgXRYCFkfEXigD7P+YfyAKcjL/Z/rB+4f3Dysj4ASggyPiZgYGP8Q37PwYGAcZXQBXijG9FnjNIvRYDGs74EGSGwlOZ+wxKj//8Z1B+9O8vUEDlocJtBrX7SjcZNO6qXAcKaN1Wu8qgc1Pjsh7jNe0LQAHDK8JSjIwXDRgZzxmfAJlhyXiawYzxJNANUnKHQQIMdiDzD4PIXWCXgoH7Po3LMKeDgcde+TsoAp73H0A8BAAWmTURvumiyAAAAABJRU5ErkJggg==">
+    <style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:ui-sans-serif,system-ui,sans-serif;background:#f9fafb;min-height:100vh}.container{max-width:56rem;margin:0 auto;padding:2rem 1rem}.header{margin-bottom:2rem}.title{font-size:1.5rem;font-family:ui-monospace,monospace;color:#1f2937}.subtitle{font-size:.875rem;color:#6b7280;font-family:ui-monospace,monospace;margin-top:.25rem}.nav{margin-top:1rem}.nav a{font-size:.75rem;color:#6b7280;font-family:ui-monospace,monospace;margin-right:1rem;text-decoration:none}.nav a:hover{color:#374151}.card{background:white;border:1px solid #d1d5db;border-radius:.25rem;padding:1.5rem}.btn{padding:.5rem 1.5rem;background:#1f2937;color:white;font-family:ui-monospace,monospace;font-size:.875rem;border:none;border-radius:.25rem;cursor:pointer}.btn:hover{background:#374151}.flex{display:flex}.justify-between{justify-content:space-between}.items-start{align-items:flex-start}.text-lg{font-size:1.125rem}.font-bold{font-weight:700}.text-gray-900{color:#111827}.mb-4{margin-bottom:1rem}.mt-2{margin-top:.5rem}.pb-4{padding-bottom:1rem}.border-b{border-bottom:1px solid #e5e7eb}.border-gray-200{border-color:#e5e7eb}.break-words{word-wrap:break-word}.whitespace-pre-wrap{white-space:pre-wrap}pre{font-family:ui-monospace,monospace;font-size:.875rem;color:#1f2937}</style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header flex justify-between items-start">
+            <div>
+                <a href="/" class="title">tinypaste</a>
+                <p class="subtitle mt-2">id: {{.ID}}</p>
+                <nav class="nav">
+                    <a href="/about">about</a>
+                    <a href="/legal">legal</a>
+                </nav>
+            </div>
+            <button onclick="navigator.clipboard.writeText(window.location.href)" class="btn">
+                copy link
+            </button>
+        </header>
+
+        <div class="card">
+            <h1 class="text-lg font-bold text-gray-900 mb-4 pb-4 border-b border-gray-200">{{.Title}}</h1>
+            <pre class="whitespace-pre-wrap break-words">{{printf "%s" .Body}}</pre>
+        </div>
+    </div>
+</body>
+
+</html>
