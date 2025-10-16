@@ -23,7 +23,7 @@ With Dokku (Recommended):
 ```bash
 # Create the app and mount a volume for the pastes
 dokku apps:create tinypaste
-ssh dokku storage:ensure-directory tinypaste
+dokku storage:ensure-directory tinypaste
 dokku storage:mount tinypaste /var/lib/dokku/data/storage/tinypaste:/app/pastes
 
 # Deploy it
