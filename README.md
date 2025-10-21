@@ -38,3 +38,10 @@ go build && ./tinypaste
 ```
 
 By default, it runs on port `8080`. Set the `PORT` environment variable to change it.
+
+## Rate Limiting
+
+Built-in nginx rate limiting prevents abuse:
+- `/save`: 2 requests/minute (paste creation)
+- `/[id]`: 30 requests/minute (viewing pastes)  
+- `/`: 60 requests/minute (general browsing)
