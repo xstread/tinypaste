@@ -13,7 +13,7 @@ From your browser, just visit the site, paste your stuff, and grab the link.
 From your terminal, use this command to post content and get the paste link:
 
 ```bash
-curl -sL -w "%{url_effective}\n" -o /dev/null -X POST -d "title=my test&body=hello from the terminal" http://localhost:8080/save
+curl -sL -w "%{url_effective}\n" -o /dev/null -X POST -d "title=my test&body=hello from the terminal&ttl=1h" http://localhost:8080/save
 ```
 
 ## Deploy Your Own
