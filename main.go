@@ -45,10 +45,28 @@ func (p *Paste) save() error {
 	subdir := fmt.Sprintf("pastes/%s", p.ID[:2])
 	os.MkdirAll(subdir, 0755)
 	
-	// Save content as plain text
+	// Save content as plain text 
 	content := p.Title + "\n" + string(p.Body)
 	filename := fmt.Sprintf("%s/%s_%s.txt", subdir, p.ID, p.TTL)
-	return os.WriteFile(filename, []byte(content), 0600)
+	
+	file, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0600)
+	if err != nil {
+		return err
+	}
+	defer file.Close()
+	
+	_, err = file.Write([]byte(content))
+	if err != nil {
+		return err
+	}
+	
+	// Force sync to disk
+	err = file.Sync()
+	if err != nil {
+		return err
+	}
+	
+	return nil
 }
 
 var cleanupOffset int
